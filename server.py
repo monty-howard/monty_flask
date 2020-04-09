@@ -10,4 +10,4 @@ def index():
 def monty():
     return redirect(url_for('static', filename='index.html'))
 
-app.run(host='0.0.0.0')
+app.run(host='0.0.0.0', port=80)
