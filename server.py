@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for, redirect
 
 app = Flask(__name__)
 
@@ -6,4 +6,8 @@ app = Flask(__name__)
 def index():
     return "hello", 200
 
-app.run()
+@app.route('/monty')
+def monty():
+    return redirect(url_for('static', filename='index.html'))
+
+app.run(host='0.0.0.0')
