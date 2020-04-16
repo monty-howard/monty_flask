@@ -1,4 +1,4 @@
-from flask import Flask, url_for, redirect
+from flask import Flask, url_for, redirect, render_template
 import sys
 import os
 
@@ -9,7 +9,12 @@ app.config['DEBUG'] = True
 
 @app.route('/')
 def index():
-    return redirect(url_for('monty'))
+    return render_template("index.html")
+
+
+@app.route('/thingstodo')
+def thingstodo():
+    return render_template("thingstodo.html")
 
 
 @app.route('/monty')
