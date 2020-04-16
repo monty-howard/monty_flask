@@ -1,6 +1,7 @@
 from flask import Flask, url_for, redirect
 import sys
 
+print('Starting')
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
