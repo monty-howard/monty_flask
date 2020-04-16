@@ -2,6 +2,7 @@ from flask import Flask, url_for, redirect
 import sys
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 
 
 @app.route('/')
