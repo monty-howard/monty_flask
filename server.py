@@ -20,9 +20,10 @@ def monty():
 @app.route('/update')
 def update():
     # run 'git pull' to get any updates
-    stream = os.popen('git pull')
+    stream = os.popen("""echo Running 'git pull'
+    git pull""")
     o = stream.read()
-    return str(o), 200
+    return f"UPDATE result: {o}", 200
 
 
 if '--local' in sys.argv:
