@@ -1,5 +1,6 @@
 from flask import Flask, url_for, redirect
 import sys
+import os
 
 print('Starting')
 app = Flask(__name__)
@@ -14,6 +15,14 @@ def index():
 @app.route('/monty')
 def monty():
     return redirect(url_for('static', filename='index.html'))
+
+
+@app.route('/update')
+def update():
+    # run 'git pull' to get any updates
+    stream = os.popen('git pull')
+    o = stream.read()
+    return str(o), 200
 
 
 if '--local' in sys.argv:
