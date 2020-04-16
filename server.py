@@ -8,7 +8,7 @@ app.config['DEBUG'] = True
 
 @app.route('/')
 def index():
-    return "hello", 200
+    return redirect(url_for('monty'))
 
 
 @app.route('/monty')
